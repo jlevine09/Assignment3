@@ -3,7 +3,7 @@ ar gl = null;
 function init() {
 	
     var canvas = document.getElementById( "webgl-canvas" );
-
+	var cone = Cone(gl, 10, vertexShaderId, fragmentShaderId );
     gl = WebGLUtils.setupWebGL( canvas );
 
     if ( !gl ) {
@@ -18,6 +18,7 @@ function init() {
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
+	cone.render();
 }
 
 window.onload = init;
